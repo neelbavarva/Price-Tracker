@@ -1,10 +1,11 @@
 // import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {AppLoading} from 'expo';
+import AppLoading from 'expo-app-loading';
 import {useFonts} from 'expo-font';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from './screens/Login';
 import Register from './screens/Register';
+import Home from './screens/Home.js';
 
 export default function App() {
 
@@ -18,9 +19,14 @@ export default function App() {
 		'GothamBookItalic': require('./assets/fonts/Gotham-BookItalic.otf')
 	});
 
+  if (!fontsLoaded) {
+		return <AppLoading />;
+  }
   
   return (
-    <Register />
+    <View>
+      <Home />
+    </View>
   );
 }
 
