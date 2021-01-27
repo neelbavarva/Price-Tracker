@@ -3,7 +3,7 @@ import {View , Text, StyleSheet, Image, TouchableOpacity, ScrollView, LogBox, Te
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
-export default function Login() {
+export default function Register() {
   return (
     <View style={styles.container}>
             <View style={{ marginTop: 190, marginBottom: 30 }}>
@@ -19,6 +19,13 @@ export default function Login() {
                 />
             </View>
             <View style={styles.SectionStyle}>
+                <Feather style={{marginLeft: 10}} name="mail" size={24} color="black" />
+                <TextInput
+                    style={{flex:1, marginLeft: 10, fontFamily: 'GothamMedium'}}
+                    placeholder="Email"
+                />
+            </View>
+            <View style={styles.SectionStyle}>
                 <MaterialCommunityIcons style={{marginLeft: 10}} name="onepassword" size={24} color="black" />
                 <TextInput
                     secureTextEntry={true}
@@ -27,8 +34,8 @@ export default function Login() {
                 />
             </View>
 
-            {/* Sign In Button */}
-
+            {/* Sign Up Button */}
+            
             <TouchableOpacity 
                 style={{
                     margin: 10, 
@@ -39,18 +46,18 @@ export default function Login() {
                     paddingVertical: 10,
                     paddingHorizontal: 10,
                 }}>
-                <Text style={{color: "white", textAlign: "center", fontFamily: 'GothamMedium'}}>Sign In</Text>
+                <Text style={{color: "white", textAlign: "center", fontFamily: 'GothamMedium'}}>Sign Up</Text>
             </TouchableOpacity>
 
-            {/* Takes to Sign Un if don't have any account */}
+            {/* Takes to Sign In if already have an account */}
 
             <View style={{flexDirection: 'row', marginTop: 10,justifyContent: 'center'}}>
-                <Text style={{fontFamily: 'GothamMedium', fontSize: 12}}>Don't have an account? </Text>
+                <Text style={{fontFamily: 'GothamMedium', fontSize: 12}}>Already have an account? </Text>
                 <TouchableOpacity>
-                    <Text style={{color: "dodgerblue", fontFamily: 'GothamMedium', fontSize: 12}}> Sign Up</Text>
+                    <Text style={{color: "dodgerblue", fontFamily: 'GothamMedium', fontSize: 12}}> Sign in</Text>
                 </TouchableOpacity>
             </View>
-
+            
         </View>
   );
 }

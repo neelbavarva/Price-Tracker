@@ -4,6 +4,7 @@ import {AppLoading} from 'expo';
 import {useFonts} from 'expo-font';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from './screens/Login';
+import Register from './screens/Register';
 
 export default function App() {
 
@@ -17,12 +18,9 @@ export default function App() {
 		'GothamBookItalic': require('./assets/fonts/Gotham-BookItalic.otf')
 	});
 
-	// if (!fontsLoaded) {
-	// 	return <AppLoading />;
-  // }
   
   return (
-    <Login />
+    <Register />
   );
 }
 
