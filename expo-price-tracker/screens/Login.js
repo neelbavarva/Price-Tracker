@@ -1,26 +1,16 @@
-import { useNavigation } from '@react-navigation/native';
 import React, {useState, useEffect} from 'react';
 import {View , Text, StyleSheet, Image, TouchableOpacity, ScrollView, LogBox, TextInput, KeyboardAvoidingView } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
 export default function Login() {
-
-    return (
-
-        <View style={styles.container}>
+  return (
+    <View style={styles.container}>
             <View style={{ marginTop: 190, marginBottom: 30 }}>
                 <View style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
-                    <Image style={{width:67, height:67, marginTop: 35}} source={require('../assets/images/logo1.jpeg')} />
-                    <Text style={{fontFamily:'GothamBoldItalic', fontSize: 35}}>inance</Text>
+                    {/* <Image style={{width:67, height:67, marginTop: 35}} source={require('../assets/images/logo1.jpeg')} /> */}
+                    <Text style={{fontFamily:'GothamBoldItalic', fontSize: 35}}>Price Tracker</Text>
                 </View>
-                <Text style={{
-                    fontFamily:'GothamBoldItalic', 
-                    fontSize: 30, 
-                    textAlign: "center", 
-                    marginLeft: 50,
-                    marginTop: -37
-                }}>Tracker</Text>
             </View>
             <View style={styles.SectionStyle}>
                 <Feather style={{marginLeft: 10}} name="user" size={24} color="black" />
@@ -59,9 +49,7 @@ export default function Login() {
             </View>
 
         </View>
-                            
-        
-    );
+  );
 }
 
 const styles = StyleSheet.create({
@@ -94,5 +82,3 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
 });
-
-
