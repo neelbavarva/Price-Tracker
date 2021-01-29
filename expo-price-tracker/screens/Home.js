@@ -1,8 +1,161 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Image, Touchable } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Image, Touchable, Picker, TextInput } from 'react-native';
 import RenderProducts from '../components/RenderProducts';
+import AddProduct from '../components/AddProduct';
 
 export default function Home() {
+
+    const [viewMode, setViewMode] = useState("RenderProduct");
+
+    const AddProductButton = () => {
+        return (
+            <TouchableOpacity 
+                style={{ 
+                    flex: 1, 
+                    justifyContent: 'center',
+                    padding: 35, 
+                    paddingBottom: 15
+                }}
+                    onPress={() => setViewMode("AddProduct")}
+                >
+                <View style={{ flexDirection: 'row', height: 45, backgroundColor: "#E4E6F3", borderRadius: 8 }}>
+                    <View
+                        style={{ 
+                            flex: 1,
+                            backgroundColor: null , 
+                            marginLeft: 12,
+                            borderRadius: 6,
+                        }}
+                        
+                    >
+                        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                            <Text style={{  marginLeft: 0, fontSize: 16,fontFamily: 'GothamMedium', lineHeight: 22, color: "#1D256E"}}>Add Product</Text>
+                        </View>
+                    </View>
+
+                    <View
+                        style={{ 
+                            flex: 1,
+                            backgroundColor: null , 
+                            margin: 5,
+                            borderRadius: 8,
+                        }}
+                    >
+                        <View
+                            style={{
+                                flex: 1,
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}
+                        />
+                    </View>
+                    <View
+                        style={{ 
+                            flex: 1,
+                            backgroundColor: null, 
+                            margin: 5,
+                            borderRadius: 8,
+                        }}
+                    >
+                        <View
+                            style={{
+                                flex: 1,
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginRight: -75
+                            }}
+                        >
+                        <Image 
+                            style={{
+                                width: 20, 
+                                height: 20, 
+                            }}
+                            tintColor= "#1D256E"
+                            source={require('../assets/icons/right-arrow.png')} />
+                        </View>
+                    </View>
+                </View>
+            </TouchableOpacity>
+        );
+    }
+
+
+    const AddProductHeader = () => {
+        return (
+            <TouchableOpacity 
+                style={{ 
+                    flex: 1, 
+                    justifyContent: 'center',
+                    padding: 35, 
+                    paddingBottom: 15
+                }}
+                    onPress={() => setViewMode("RenderProduct")}
+                >
+                <View style={{ flexDirection: 'row', height: 45, backgroundColor: "#E4E6F3", borderRadius: 8 }}>
+                    <View
+                        style={{ 
+                            flex: 1,
+                            backgroundColor: null , 
+                            marginLeft: 12,
+                            borderRadius: 6,
+                        }}
+                        
+                    >
+                        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                            <Text style={{  marginLeft: 0, fontSize: 16,fontFamily: 'GothamMedium', lineHeight: 22, color: "#1D256E"}}>Add Product</Text>
+                        </View>
+                    </View>
+
+                    <View
+                        style={{ 
+                            flex: 1,
+                            backgroundColor: null , 
+                            margin: 5,
+                            borderRadius: 8,
+                        }}
+                    >
+                        <View
+                            style={{
+                                flex: 1,
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}
+                        />
+                    </View>
+                    <View
+                        style={{ 
+                            flex: 1,
+                            backgroundColor: null, 
+                            margin: 5,
+                            borderRadius: 8,
+                        }}
+                    >
+                        <View
+                            style={{
+                                flex: 1,
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginRight: -75
+                            }}
+                        >
+                        <Image 
+                            style={{
+                                width: 20, 
+                                height: 20, 
+                            }}
+                            tintColor= "#1D256E"
+                            source={require('../assets/icons/right-arrow.png')} />
+                        </View>
+                    </View>
+                </View>
+            </TouchableOpacity>
+        );
+    }
+
   return (
     <ScrollView>
             {/* Home Header */}
@@ -67,76 +220,11 @@ export default function Home() {
         </View>
 
         {/* Add Product component */}
-        <TouchableOpacity style={{ flex: 1, justifyContent: 'center', padding: 35, paddingBottom: 15}}>
-                <View style={{ flexDirection: 'row', height: 45, backgroundColor: "#E4E6F3", borderRadius: 8 }}>
-                    {/* Claim */}
-                    <View
-                        style={{ 
-                            flex: 1,
-                            backgroundColor: null , 
-                            marginLeft: 12,
-                            borderRadius: 6,
-                        }}
-                        
-                    >
-                        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{  marginLeft: 0, fontSize: 16,fontFamily: 'GothamMedium', lineHeight: 22, color: "#1D256E"}}>Add Product</Text>
-                        </View>
-                    </View>
-
-
-                    {/* Get Point */}
-                    <View
-                        style={{ 
-                            flex: 1,
-                            backgroundColor: null , 
-                            margin: 5,
-                            borderRadius: 8,
-                        }}
-                    >
-                        <View
-                            style={{
-                                flex: 1,
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}
-                        />
-                    </View>
-
-                    {/* Divider */}
-
-                    {/* My Card */}
-                    <View
-                        style={{ 
-                            flex: 1,
-                            backgroundColor: null, 
-                            margin: 5,
-                            borderRadius: 8,
-                        }}
-                    >
-                        <View
-                            style={{
-                                flex: 1,
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                marginRight: -75
-                            }}
-                        >
-                        <Image 
-                            style={{
-                                width: 20, 
-                                height: 20, 
-                            }}
-                            tintColor= "#1D256E"
-                            source={require('../assets/icons/right-arrow.png')} />
-                        </View>
-                    </View>
-                </View>
-            </TouchableOpacity>
+        
             
-            <RenderProducts />
+            {viewMode == "RenderProduct" && <AddProductButton />}
+            {viewMode == "AddProduct" && <AddProductHeader/>}
+            {viewMode == "RenderProduct" ? <RenderProducts /> : <AddProduct />}
 
     </ScrollView>
   );
@@ -149,4 +237,31 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  Text : {
+    fontSize: 14,
+    color: "black",
+    marginLeft: 2,
+    paddingTop: 8,
+    fontFamily: 'GothamMedium',
+    },
+
+    inputField : {
+        backgroundColor: "white",
+        borderWidth: 1,
+        borderColor: "#D1D1D1",
+        borderRadius: 5,
+        padding: 10,
+        marginTop: 8,
+        marginBottom: 12,
+        fontFamily: 'GothamLight', 
+        fontSize: 14,
+    },
+
+    button : {
+        backgroundColor: "#222222",
+        padding: 12,
+        borderRadius: 6,
+    }
+
 });

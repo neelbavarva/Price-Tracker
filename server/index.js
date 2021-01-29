@@ -36,8 +36,8 @@ app.use(express.urlencoded({ extended: false }))
 
 let usersession = "";
 
-app.get('/', (req, res) => {
-    res.send("Registered")
+app.get('/', requireLogin, (req, res) => {
+    res.render('home')
 })
 
 app.get('/register', (req,res) => {
@@ -71,9 +71,7 @@ app.post('/login', async (req, res) => {
         req.session.user_id = user._id;
         usersession = user._id;
         console.log(usersession)
-        // req.session.user_name = user.username;
         res.redirect('/secret');
-        // console.log(req.session.user_name);
     } else {
         res.redirect('/login');
     }
@@ -85,9 +83,9 @@ app.post('/logout', (req, res) => {
     res.redirect('/login');
 })
 
-app.get('/secret', requireLogin, (req, res) =>{
-    res.render('home')
-})
+// app.get('/secret', requireLogin, (req, res) =>{
+//     res.render('home')
+// })
 
 app.post('/addproduct',requireLogin, async (req, res) =>{
     const {url, site, price} = req.body;
