@@ -1,0 +1,118 @@
+/* Main Navbar */
+
+.navbar-b {
+  transition: all 0.5s ease-in-out;
+  background-color: #181818;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.name {
+  padding-left: 11px;
+}
+
+.navbar-b.navbar-trans .nav-item,
+.navbar-b.navbar-reduce .nav-item {
+  position: relative;
+  padding-right: 10px;
+  padding-left: 0;
+}
+
+/* Links */
+
+.navbar-b.navbar-trans .nav-link,
+.navbar-b.navbar-reduce .nav-link {
+  color: #75f4da;
+  text-transform: uppercase;
+}
+
+/* Line below links */
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.nav-link {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.navbar-b.navbar-trans .nav-link:before,
+.navbar-b.navbar-reduce .nav-link:before {
+  content: "";
+  position: absolute;
+  margin-left: 0px;
+  width: 0%;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  transition: all 500ms ease;
+}
+
+/* My name styles */
+
+.navbar-b .navbar-brand {
+  margin-top: -17px;
+  margin-bottom: -17px;
+  margin-left: -10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.nav-img {
+  width: 45px;
+}
+
+/* Position */
+
+.navbar-toggler {
+  position: relative;
+}
+
+/* Disable bootstrap toggler border */
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: 0;
+}
+
+/* Actual main styles of toggler */
+
+.navbar-toggler span {
+  display: block;
+  background-color: rgb(155, 155, 155);
+  height: 1px;
+  width: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  left: 0;
+  opacity: 1;
+}
+
+/* Rotating effect of the bars */
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  opacity: 0.9;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+  height: 12px;
+  visibility: hidden;
+  background-color: transparent;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  opacity: 0.9;
+}
